@@ -5,14 +5,14 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
 <head>
 <meta charset="utf-8">
-<title>Latest Posts &#8211; Blogity Blogity Blog</title>
-<meta name="description" content="A simple and clean responsive Jekyll theme for words and photos.">
+<title>Search &#8211; Blogity Blogity Blog</title>
+
 
 
 
 <!-- Twitter Cards -->
-<meta name="twitter:title" content="Latest Posts">
-<meta name="twitter:description" content="A simple and clean responsive Jekyll theme for words and photos.">
+<meta name="twitter:title" content="Search">
+
 
 
 
@@ -22,16 +22,16 @@
 <!-- Open Graph -->
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Latest Posts">
-<meta property="og:description" content="A simple and clean responsive Jekyll theme for words and photos.">
-<meta property="og:url" content="http://localhost:4000/">
+<meta property="og:title" content="Search">
+
+<meta property="og:url" content="http://localhost:4000/search/">
 <meta property="og:site_name" content="Blogity Blogity Blog">
 
 
 
 
 
-<link rel="canonical" href="http://localhost:4000/">
+<link rel="canonical" href="http://localhost:4000/search/">
 <link href="http://localhost:4000/feed.xml" type="application/atom+xml" rel="alternate" title="Blogity Blogity Blog Feed">
 
 <!-- https://t.co/dKP3o1e -->
@@ -121,14 +121,29 @@
     
     <div class="entry-wrapper">
       <header class="entry-header">
-        <h1 class="entry-title">Latest Posts</h1>
+        <h1 class="entry-title">Search</h1>
       </header>
       <div class="entry-content">
-        <ul class="post-list">
+        <!-- Search form -->
+<form method="get" action="http://localhost:4000/search/" data-search-form="" class="simple-search">
+  <label for="q">Search Blogity Blogity Blog for:</label>
+  <input type="search" name="q" id="goog-wm-qt" placeholder="What are you looking for?" data-search-input="" autofocus="" />
+  <input type="submit" value="Search" id="goog-wm-sb" />
+</form>
 
-  <li><article><a href="http://localhost:4000/blog/hello-world/">Hello World <span class="entry-date"><time datetime="2017-03-19T15:39:55-04:00">March 19, 2017</time></span> <span class="excerpt">Hi You’ll find this post in your _posts directory - edit this post and re-build (or run with the -w switch) to see your changes!To add new posts, simply add a file in the _posts directory that follows the convention: YYYY-MM-DD-name-of-post.ext.</span></a></article></li>
+<!-- Search results placeholder -->
+<h6 data-search-found="">
+  <span data-search-found-count=""></span> result(s) found for &ldquo;<span data-search-found-term=""></span>&rdquo;.
+</h6>
+<ul class="post-list" data-search-results=""></ul>
 
-</ul>
+<!-- Search result template -->
+<script type="text/x-template" id="search-result">
+  <li><article>
+    <a href="##Url##">##Title## <span class="excerpt">##Excerpt##</span></a>
+  </article></li>
+</script>
+
 
       </div><!-- /.entry-content -->
     </div><!-- /.entry-wrapper -->
